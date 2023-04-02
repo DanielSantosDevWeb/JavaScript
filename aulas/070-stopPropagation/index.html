@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vakidador de pessoas </title>
+    <style>
+        .um {
+            background-color: #020FA2;
+            width: 100vw;
+            height: 50vh;
+            margin: auto;
+        }
+        .dois {
+            background-color: #A20202;
+            width: 75%;
+            height: 75%;
+           margin: auto;
+        }
+        .tres {
+            background-color: #02A202;
+            width: 75%;
+            height: 75%;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="um">
+        <div class="dois">
+            <div class="tres"></div>
+        </div>
+    </div>
+    <script>
+        
+        const divs = document.querySelectorAll('div')
+        
+        divs[1].onclick = ()=> {
+            console.log('div1')
+        }
+        
+        divs[2].onclick = (e)=> {
+            e.stopPropagation() // Para a propagação padrão do javascript ( window.document.body.div1.div2.div3 )
+            console.log('div2')
+        }
+        divs[3].onclick = (e)=> {
+            e.stopPropagation()
+            console.log('div3')
+        }
+    </script>
+</body>
+
+</html>

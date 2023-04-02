@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>vakidador de pessoas </title>
+    <style>
+        
+        * {
+            color: white;
+        }
+        
+        body {
+            background-color: #260026;
+            text-align: center;
+        }
+        
+        form {
+            width: 350px;
+            margin: auto;
+        }
+        
+        .divForm {
+            height: 50px;
+        }
+        
+        input {
+            background-color: #260026;
+            border: 1px solid white;
+        }
+        
+        #enviar {
+            height: 30px;
+            width: 100px;
+            background-color: #260026;
+        }
+        
+        div#card {
+            margin: 20px auto;
+            display: flex;
+            width: 350px;
+            height: 100px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        
+        #perfil {
+            border: 1px solid white;
+            width: 30%;
+            margin: 5px;
+        }
+        
+        img {
+            height: 100% ;
+            width: 100%;
+        }
+        
+        #infos {
+            display: grid;
+            margin: 10px;
+            text-align: left;
+        }
+        
+        #infos #infoNome {
+            font-weight: bolder;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend><span>Dados pessoais</span></legend>
+            <div class="divForm" id="sexo">
+            <label for="marculino">Masculino</label>
+            <input type="radio" name="sexo" checked id="masculino">
+            <label for="feminino">Feminino</label>
+            <input type="radio" name="sexo" id="feminino">
+            </div>
+            <div class="divForm">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" checked ><br>
+                <label for="sobrenome" >sobrenome</label>
+                <input type="text" name="sobrenome" checked id="sobrenome">
+            </div>
+            <div>
+                <label for="trabalho">trabalho:</label>
+                <input type="text" name="trabalho" id="trabalho">
+            </div>
+            <div class="divForm">
+                <label for="ano">nascimento</label>
+                <input type="date" name="ano" checked id="ano" value="" />
+            </div>
+            <input type="button" value="Adicionar" id="enviar">
+        </fieldset>
+    </form>
+    <div id="card">
+        
+        
+    </div>
+    
+    <script src="script.js">
+        
+    </script>
+</body>
+
+</html>
