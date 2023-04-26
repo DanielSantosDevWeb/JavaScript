@@ -1,66 +1,71 @@
-const nome = document.querySelector('#nome')
-const btnLogin = document.querySelector('#login')
-const btnLogout = document.querySelector('#logout')
-const form = document.querySelector('#form')
-const welcome = document.querySelector('#welcome')
+const nome = document.querySelector("#nome");
+const btnLogin = document.querySelector("#login");
+const btnLogout = document.querySelector("#logout");
+const form = document.querySelector("#form");
+const welcome = document.querySelector("#welcome");
 
+const Data = {
+  projetos: [
+    {
+      nome: "daniel",
+    },
+  ],
+  categorias: {
+    categorias: "infaestrutura",
+  },
+};
 
-const editarMensagem = ()=> {
+const js = JSON.stringify(Data);
 
-    const text = document.querySelector('#textUser')
+const editarMensagem = () => {
+  const text = document.querySelector("#textUser");
 
-    const userName = localStorage.getItem('usuario')
+  const userName = localStorage.getItem("usuario");
 
-    text.textContent = 'Seja bem vindo ' + userName
-}
+  text.textContent = "Seja bem vindo " + userName;
+};
 
-const sumirMensagem = ()=> {
+const sumirMensagem = () => {
+  welcome.style.display = "none";
 
-    welcome.style.display = 'none'
+  console.log(js);
+};
 
-}
+const mostrarMensagem = () => {
+  welcome.style.display = "block";
+};
 
-const mostrarMensagem = ()=> {
+const sumirForm = () => {
+  form.style.display = "none";
+};
 
-    welcome.style.display = 'block'
-}
+const mostraForm = () => {
+  form.style.display = "block";
+};
 
-const sumirForm = ()=> {
-    form.style.display = 'none'
-}
+const addUserName = () => {
+  localStorage.setItem("usuario", nome.value);
 
-const mostraForm = ()=> {
-    form.style.display = 'block'
-}
+  mostrarMensagem();
+  editarMensagem();
+};
 
-const addUserName = ()=> {
-    localStorage.setItem('usuario', nome.value)
+btnLogout.addEventListener("click", (e) => {
+  sumirMensagem();
 
-    mostrarMensagem()
-    editarMensagem()
-}
+  mostraForm();
 
+  nome.value = "";
 
-btnLogout.addEventListener('click', (e)=> {
+  localStorage.removeItem("usuario");
+});
 
-    sumirMensagem()
+btnLogin.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    mostraForm()
+  addUserName();
 
-    nome.value = ''
+  sumirForm();
+});
 
-    localStorage.removeItem('usuario')
-})
-
-
-btnLogin.addEventListener('click' , (e)=> {
-    e.preventDefault()
-
-    addUserName()
-
-    sumirForm()
-})
-
-sumirMensagem()
-
-
+sumirMensagem();

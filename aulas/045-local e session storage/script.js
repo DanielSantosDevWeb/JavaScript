@@ -1,43 +1,41 @@
-//LocalStorage salva dados no computador do cliente sem tempo se expiracao 
+//LocalStorage salva dados no computador do cliente sem tempo se expiracao
 
 //Adicionando um item
 
-localStorage.setItem('n1', 1)
+localStorage.setItem("n1", 1);
 
-localStorage.setItem('n2', '2')
+localStorage.setItem("n2", "2");
 
 //Chamando um item
 
-const numero1 = localStorage.getItem('n1')
+const numero1 = localStorage.getItem("n1");
 
 console.log(numero1);
 
-//Removendo um item 
+//Removendo um item
 
-localStorage.removeItem('n2')
+localStorage.removeItem("n2");
 
 //Limpamdo LocalStorage
 
-localStorage.clear()
+localStorage.clear();
 
 //salvando objeto no LocalStorage
 
 const pessoa = {
-    nome: 'Carlos',
-    idade: 19,
-    localidade: 'Sape, PB'
-}
+  nome: "Carlos",
+  idade: 19,
+  localidade: "Sape, PB",
+};
 
-//Tranforma o objeto em json 
+//Tranforma o objeto em json
 
-localStorage.setItem('pessoa', JSON.stringify(pessoa))
+localStorage.setItem("pessoa", JSON.stringify(pessoa));
 
 //Removendo e tranformando em objeto novamente
 
-const pessoaTexto = localStorage.getItem('pessoa')
+const pessoaTexto = localStorage.getItem("pessoa");
 
-const pessoa2 = JSON.parse(pessoaTexto)
+const pessoa2 = JSON.parse(pessoaTexto);
 
 console.log(pessoa2);
-
-
